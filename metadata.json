@@ -1,0 +1,8 @@
+{
+  "name": "SystemProtected",
+  "description": "Imported from GitHub: zikrifikri21/MWHEHEH",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="#F8F9FA">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:text="BerkacaKi Source"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="#1A73E8"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:text="Perangkat ini bertindak sebagai Sumber (Screen Mirroring)"
+            android:textSize="14sp"
+            android:textColor="#5F6368"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <!-- PIN Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:padding="24dp"
+            android:elevation="2dp"
+            android:gravity="center"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:text="PIN Sambungan Anda:"
+                android:textSize="14sp"
+                android:textColor="#202124"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/tvPin"
+                android:text="------"
+                android:textSize="48sp"
+                android:textStyle="bold"
+                android:textColor="#202124"
+                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="Bagikan PIN ini ke perangkat Viewer untuk memulai mirroring."
+                android:textSize="12sp"
+                android:textColor="#70757A"
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E0E0E0"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:id="@+id/tvBroadcastStatus"
+                android:text="Status: Siaran Siap / Menunggu Viewer"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#2E7D32"
+                android:layout_marginBottom="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <Button
+                android:id="@+id/btnStopBroadcast"
+                android:text="Putuskan / Hentikan Siaran"
+                android:backgroundTint="#D32F2F"
+                android:textColor="@android:color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="?android:attr/buttonStyleSmall" />
+
+            <Button
+                android:id="@+id/btnStartBroadcast"
+                android:text="Mulai Siaran Layar"
+                android:backgroundTint="#1A73E8"
+                android:textColor="@android:color/white"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="?android:attr/buttonStyleSmall" />
+        </LinearLayout>
+
+        <!-- Permissions & Background Settings Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:padding="20dp"
+            android:elevation="2dp"
+            android:layout_marginBottom="24dp">
+
+            <TextView
+                android:text="Pengaturan Latar Belakang (System Mode)"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#202124"
+                android:layout_marginBottom="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <!-- Draw over apps permission block -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:text="1. Izin Tampil di Atas Aplikasi Lain"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#202124"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Wajib agar koneksi otomatis dari viewer setelah reboot perangkat bekerja mulus di latar belakang."
+                    android:textSize="12sp"
+                    android:textColor="#5F6368"
+                    android:layout_marginTop="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/btnOverlayPermission"
+                    android:text="Berikan Izin Hamparan"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="?android:attr/buttonStyleSmall" />
+            </LinearLayout>
+
+            <!-- Accessibility Auto-Accept permission block -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:text="2. Layanan Klik Otomatis (Bebas Popup)"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#202124"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Wajib agar tombol 'Mulai Sekarang' (Izin Berbagi Layar) ditekan otomatis tanpa muncul popup yang mengganggu Anda."
+                    android:textSize="12sp"
+                    android:textColor="#5F6368"
+                    android:layout_marginTop="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <Button
+                    android:id="@+id/btnAccessibilityPermission"
+                    android:text="Aktifkan Klik Otomatis"
+                    android:layout_marginTop="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="?android:attr/buttonStyleSmall" />
+            </LinearLayout>
+
+            <!-- Hide App Icon switch block -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Switch
+                    android:id="@+id/swHideIcon"
+                    android:text="Sembunyikan Ikon Aplikasi"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:textColor="#202124"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:text="Menghilangkan ikon aplikasi BerkacaKi dari Beranda (Home) dan Daftar Aplikasi agar bekerja sepenuhnya di latar belakang seperti layanan sistem."
+                    android:textSize="12sp"
+                    android:textColor="#5F6368"
+                    android:layout_marginTop="4dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- Recovery Warning Info -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="#E8F0FE"
+            android:padding="16dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:text="💡 Catatan Penting:"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#1967D2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:text="Jika ikon disembunyikan, Anda tetap dapat membuka kembali layar pengaturan PIN ini kapan saja dengan menyapu laci notifikasi sistem lalu mengetuk notifikasi aktif 'BerkacaKi Siap Menerima Sambungan'."
+                android:textSize="12sp"
+                android:textColor="#1967D2"
+                android:layout_marginTop="4dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
